@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For ma pani puri ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1, h2, p { color: #7a003c; }
+
+    .container { padding: 80px 20px; }
+
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 15px;
+      transition: 0.2s;
+    }
+
+    #yes { background: #ff4d6d; color: white; }
+    #no  { background: #444; color: white; position: absolute; }
+
+    .heart {
+      position: fixed;
+      color: rgba(255, 0, 85, 0.6);
+      animation: float 6s linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to   { transform: translateY(-10vh); }
+    }
+
+    .slideshow img {
+      width: 260px;
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="clouds.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="main">
+  <h1>Hey Paneer ka Thukada 😏❤️</h1>
+  <h2>Ananta Krishnan, will you be my Valentine? 💌</h2>
+
+  <button id="yes" onclick="yesClick()">Yes 😍</button>
+  <button id="no" onmouseover="moveNo()">No 🙃</button>
+</div>
+
+<script>
+  function yesClick() {
+    document.getElementById("main").innerHTML = `
+      <h1>Yayyyyy 😭❤️</h1>
+      <h2>Happy first ever Valentine's Day, my bhangrooooo🥺❤️</h2>
+      <p>You are my comfort, my chaos, my calm, and my home 💕</p>
+
+      <h3>💌 Love Letter 💌</h3>
+      <p>
+        Dear sekai 🌍🥺❤️,<br><br>
+        i really dont know what to gift u this valentine's day,still with the help of gpt i made this website tho! 💖
+         i really love u tho babe....🥺and and i cant function with out u ....u are the pushbutton and am the led 😝 
+         cuz while pressing the button the led glows like u make my life glow.... really wanna annoy u more <br><br>
+        Forever yours 😘
+      </p>
+
+      <h3>📸 Our Memories 📸</h3>
+      <div class="slideshow">
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+      </div>
+    `;
+  }
+  
+  function moveNo() {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+    document.getElementById("no").style.left = x + "px";
+    document.getElementById("no").style.top = y + "px";
+  }
+
+  setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 300);
+</script>
+
+</body>
+</html>
